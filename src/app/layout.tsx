@@ -1,22 +1,28 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'DentiSync - Dental Practice Management Made Easy',
-  description: 'Streamline your dental practice with our comprehensive management solution.',
-}
+  title: "DentiSync - Modern Dental Practice Management",
+  description: "Streamline your dental practice with our comprehensive solution",
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

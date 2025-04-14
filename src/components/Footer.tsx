@@ -6,19 +6,18 @@ import Link from 'next/link';
 export default function Footer() {
   const footerLinks = {
     Product: [
-      { name: 'Features', href: '#features' },
-      { name: 'Pricing', href: '#pricing' },
-      { name: 'Security', href: '#security' },
+      { name: 'Features', href: '/#features' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Security', href: '/security' },
     ],
     Company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Contact', href: '#contact' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: '/contact' },
     ],
     Legal: [
-      { name: 'Privacy Policy', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' },
-      { name: 'Cookie Policy', href: '#cookie' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Cookie Policy', href: '/cookies' },
     ],
   };
 
@@ -28,7 +27,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Logo and Description */}
           <div className="col-span-4">
-            <div className="flex items-center gap-2 mb-6">
+            <Link href="/" className="flex items-center gap-2 mb-6">
               <Image
                 src="/images/logo.png"
                 alt="DentiSync Logo"
@@ -36,7 +35,7 @@ export default function Footer() {
                 height={40}
               />
               <span className="text-2xl font-bold">DentiSync</span>
-            </div>
+            </Link>
             <p className="text-white/70 mb-6">
               Revolutionizing dental practice management with innovative solutions.
             </p>
@@ -85,13 +84,13 @@ export default function Footer() {
               © 2024 DentiSync. All rights reserved.
             </p>
             <div className="flex gap-8">
-              <Link href="#" className="text-white/70 hover:text-white">
+              <Link href="/terms" className="text-white/70 hover:text-white">
                 Terms
               </Link>
-              <Link href="#" className="text-white/70 hover:text-white">
+              <Link href="/privacy" className="text-white/70 hover:text-white">
                 Privacy
               </Link>
-              <Link href="#" className="text-white/70 hover:text-white">
+              <Link href="/cookies" className="text-white/70 hover:text-white">
                 Cookies
               </Link>
             </div>
